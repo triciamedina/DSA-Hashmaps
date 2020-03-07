@@ -10,15 +10,15 @@ const removeDuplicates = function(str) {
     let noDuplicates = new HashMap();
     let newString = '';
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === ' ') {
-            newString += str[i];
+    for (const char of str) {
+        if (char === ' ') {
+            newString += char;
         } else {
-            let slot = noDuplicates._findSlot(str[i]);
+            let slot = noDuplicates._findSlot(char);
 
             if (!noDuplicates._hashTable[slot]) {
-                noDuplicates.set(str[i]);
-                newString += str[i];
+                noDuplicates.set(char);
+                newString += char;
             }
         }
     }
